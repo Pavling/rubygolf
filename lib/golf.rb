@@ -1,7 +1,7 @@
 class Golf
   
   class << self
-  
+
     def hole1 a
       a.inject :*
     end
@@ -36,10 +36,10 @@ class Golf
   
     def hole7 v
       v.reduce([]) { |m, e| 
-        ((n=m.last).last rescue nil) == e-1 ? n << e : m << [e]
+        ((n=m.last) && n.last) == e-1 ? n << e : m << [e]
         m 
         }.map { |m| 
-          [m[0],m[-1]].uniq.join('-') 
+          [m[0],m[-1]].uniq.join(?-) 
         }
     end
     
