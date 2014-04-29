@@ -10,7 +10,7 @@ v.reduce :*
 (1..v).reduce :*
         
 v.map { |e|
-  e =~ /^m/ ? "hat(#{e})" : e =~ /^(d.*).$/ ? "#{$1}(bone))" : ("dead#{$1}" if e =~ /^cat(.*)/)
+  e =~ /^m/ ? "hat(#{e})" : e =~ /^(d.*).$/ ? "#{$1}(bone))" : e.gsub(/^cat/, "dead")
 }
         
 v.reduce [] { |m, e| i=v.index(e)
