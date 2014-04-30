@@ -14,8 +14,7 @@ v.map { |e|
   e)
 }
         
-v.reduce [] { |m, e| i=v.index(e)
-  m + v.each_cons(i+1).to_a}
+(1..v.size).flat_map{|i| [*v.each_cons(i)]}
         
 (1..v).map { |i|
   s = ""
